@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
+
 public class College {
 
 	private static final String url = "jdbc:sqlserver://localhost:1433;databaseName=College;encrypt=true;trustServerCertificate=true;";

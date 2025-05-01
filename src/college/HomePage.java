@@ -15,8 +15,7 @@ import java.io.File;
 
 public class HomePage extends Frame implements ActionListener {
 
-	
-		private Image img; 
+	private Image img;
 
 	Button instructorButton = new Button("Instructor");
 	Button departmentButton = new Button("Department");
@@ -48,10 +47,10 @@ public class HomePage extends Frame implements ActionListener {
 
 	public HomePage() {
 		try {
-            img = ImageIO.read(new File("C:\\Users\\moham\\OneDrive\\Pictures\\Camera Roll\\College.jpg"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+			img = ImageIO.read(new File("C:\\Users\\moham\\OneDrive\\Pictures\\Camera Roll\\College.jpg"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		setLayout(null);
 		setBounds(300, 200, 500, 400);
 		setTitle("Home Page");
@@ -94,9 +93,10 @@ public class HomePage extends Frame implements ActionListener {
 			E.setVisible(true);
 		}
 	}
-public void paint(Graphics g) {
-    if (img != null) {
-        g.drawImage(img, 0, 0, getWidth(), getHeight(), this); 
-    }
-}
+
+	public void paint(Graphics g) {
+		if (img != null) {
+			g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
+		}
+	}
 }

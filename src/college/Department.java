@@ -12,11 +12,12 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.File;
 
+
+
 public class Department extends Frame implements ActionListener {
 
-private Image img; 
+	private Image img;
 
-	
 	Student S;
 	Instructor I;
 	Courses C;
@@ -45,13 +46,13 @@ private Image img;
 	Button exitButton = new Button("Back");
 
 	Department() {
-		
+
 		try {
-            img = ImageIO.read(new File("C:\\Users\\moham\\OneDrive\\Pictures\\Camera Roll\\Department.jpg")); 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-		
+			img = ImageIO.read(new File("C:\\Users\\moham\\OneDrive\\Pictures\\Camera Roll\\Department.jpg"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		setLayout(null);
 		setBounds(200, 200, 600, 400);
 		setTitle("Department Management");
@@ -145,14 +146,12 @@ private Image img;
 		setVisible(false);
 	}
 
-	
 	public void paint(Graphics g) {
-    if (img != null) {
-        g.drawImage(img, 0, 0, getWidth(), getHeight(), this); 
-    }
-}
-	 
-	
+		if (img != null) {
+			g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
+		}
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == insertButton) {

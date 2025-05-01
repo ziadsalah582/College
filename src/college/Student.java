@@ -12,6 +12,8 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.File;
 
+
+
 public class Student extends Frame implements ActionListener {
 
 	Instructor I;
@@ -20,7 +22,7 @@ public class Student extends Frame implements ActionListener {
 	Enrollment E;
 	HomePage H;
 
-    private Image img; 
+	private Image img;
 
 	public void setOtherFrames(Instructor I, Department D, Courses C, Enrollment E, HomePage H) {
 
@@ -56,10 +58,10 @@ public class Student extends Frame implements ActionListener {
 	Student() {
 
 		try {
-            img = ImageIO.read(new File("C:\\Users\\moham\\OneDrive\\Pictures\\Camera Roll\\Student.jpg"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+			img = ImageIO.read(new File("C:\\Users\\moham\\OneDrive\\Pictures\\Camera Roll\\Student.jpg"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		setLayout(null);
 		setBounds(250, 250, 650, 450);
 		setTitle("Student Management");
@@ -104,9 +106,6 @@ public class Student extends Frame implements ActionListener {
 		add(lphoneLabel);
 		add(lphoneField);
 
-
-		
-		
 		add(insertButton);
 		add(resetButton);
 		add(updateButton);
@@ -160,19 +159,18 @@ public class Student extends Frame implements ActionListener {
 
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
-				dispose(); 
-				System.exit(0); 
+				dispose();
+				System.exit(0);
 			}
 		});
 		setVisible(false);
 	}
-	
-	public void paint(Graphics g) {
-    if (img != null) {
-        g.drawImage(img, 0, 0, getWidth(), getHeight(), this); 
-    }
-}
 
+	public void paint(Graphics g) {
+		if (img != null) {
+			g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
+		}
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -270,4 +268,3 @@ public class Student extends Frame implements ActionListener {
 
 	}
 }
- 

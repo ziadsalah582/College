@@ -11,14 +11,12 @@ import javax.swing.JOptionPane;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.File;
-/**
- *
- * @author Ziad Salah Mohamed
- */
+
+
 
 public class Courses extends Frame implements ActionListener {
 
-	private Image img; 
+	private Image img;
 
 	Student S;
 	Instructor I;
@@ -51,12 +49,12 @@ public class Courses extends Frame implements ActionListener {
 	Button exitButton = new Button("Back");
 
 	Courses() {
-		
+
 		try {
-            img = ImageIO.read(new File("C:\\Users\\moham\\OneDrive\\Pictures\\Camera Roll\\Courses.jpg")); 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+			img = ImageIO.read(new File("C:\\Users\\moham\\OneDrive\\Pictures\\Camera Roll\\Courses.jpg"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		setLayout(null);
 		setBounds(200, 200, 600, 400);
 		setTitle("Courses Management");
@@ -153,11 +151,13 @@ public class Courses extends Frame implements ActionListener {
 		});
 		setVisible(false);
 	}
-public void paint(Graphics g) {
-    if (img != null) {
-        g.drawImage(img, 0, 0, getWidth(), getHeight(), this); 
-    }
-}
+
+	public void paint(Graphics g) {
+		if (img != null) {
+			g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
+		}
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == insertButton) {

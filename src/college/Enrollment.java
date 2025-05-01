@@ -14,21 +14,16 @@ import javax.imageio.ImageIO;
 import java.io.File;
 
 
-/**
- *
- * @author moham
- *
- */
+
 public class Enrollment extends Frame implements ActionListener {
 
-	private Image img; 
+	private Image img;
 
 	Instructor I;
 	Department D;
 	Courses C;
 	Student S;
 	HomePage H;
-	
 
 	public void setOtherFrames(Student S, Instructor I, Department D, Courses C, HomePage H) {
 		this.S = S;
@@ -53,13 +48,12 @@ public class Enrollment extends Frame implements ActionListener {
 	Button exitButton = new Button("Back");
 
 	Enrollment() {
-		
+
 		try {
-            img = ImageIO.read(new File("C:\\Users\\moham\\OneDrive\\Pictures\\Camera Roll\\Enrollment.jpg")); 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-		
+			img = ImageIO.read(new File("C:\\Users\\moham\\OneDrive\\Pictures\\Camera Roll\\Enrollment.jpg"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		setLayout(null);
 		setBounds(200, 200, 600, 400);
@@ -120,13 +114,11 @@ public class Enrollment extends Frame implements ActionListener {
 			}
 		});
 		addWindowListener(new WindowAdapter() {
-    public void windowClosing(WindowEvent e) {
-        dispose(); 
-        System.exit(0); 
-    }
-});
-		
-		
+			public void windowClosing(WindowEvent e) {
+				dispose();
+				System.exit(0);
+			}
+		});
 
 		// Add mouse hover effect deleteButton
 		deleteButton.addMouseListener(new MouseAdapter() {
@@ -155,14 +147,12 @@ public class Enrollment extends Frame implements ActionListener {
 		setVisible(false);
 	}
 
-	
-	
 	public void paint(Graphics g) {
-    if (img != null) {
-        g.drawImage(img, 0, 0, getWidth(), getHeight(), this); 
-    }
-}
-	 
+		if (img != null) {
+			g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
+		}
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == insertButton) {
@@ -222,6 +212,7 @@ public class Enrollment extends Frame implements ActionListener {
 		}
 	}
 // Error
+
 	private void updateEnrollment() {
 		try (Connection conn = College.getConnection()) {
 			String sql = "UPDATE Enrollment SET Enrollment_Date = ?, C_ID = ? WHERE C_ID = ? AND Student_ID  = ? ";
@@ -258,12 +249,11 @@ public class Enrollment extends Frame implements ActionListener {
 		}
 	}
 
-
 	private void deleteEnrollment() {
 		try (Connection conn = College.getConnection()) {
 			String sql = "DELETE FROM Enrollment WHERE C_ID = ? AND Student_ID  = ?";
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			
+
 			String StudentText = studentIdField.getText().trim();
 			if (StudentText.isEmpty()) {
 				stmt.setNull(1, Types.INTEGER);

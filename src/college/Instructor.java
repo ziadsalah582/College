@@ -12,9 +12,12 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.File;
 
+
+
+
 public class Instructor extends Frame implements ActionListener {
 
-		private Image img; 
+	private Image img;
 
 	Student S;
 	Department D;
@@ -53,14 +56,13 @@ public class Instructor extends Frame implements ActionListener {
 
 //Constructor
 	Instructor() {
-		
-		
+
 		try {
-            img = ImageIO.read(new File("C:\\Users\\moham\\OneDrive\\Pictures\\Camera Roll\\Instructor.jpg")); 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-		
+			img = ImageIO.read(new File("C:\\Users\\moham\\OneDrive\\Pictures\\Camera Roll\\Instructor.jpg"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		setLayout(null);
 		setBounds(250, 250, 650, 450);
 		setTitle("Instructor Management");
@@ -143,13 +145,13 @@ public class Instructor extends Frame implements ActionListener {
 				deleteButton.setBackground(Color.WHITE);
 			}
 		});
-		
+
 		addWindowListener(new WindowAdapter() {
-    public void windowClosing(WindowEvent e) {
-        dispose();
-        System.exit(0); 
-    }
-});
+			public void windowClosing(WindowEvent e) {
+				dispose();
+				System.exit(0);
+			}
+		});
 
 		insertButton.addMouseListener(new MouseAdapter() {
 			@Override
@@ -164,12 +166,12 @@ public class Instructor extends Frame implements ActionListener {
 		});
 		setVisible(false);
 	}
-	
+
 	public void paint(Graphics g) {
-    if (img != null) {
-        g.drawImage(img, 0, 0, getWidth(), getHeight(), this); 
-    }
-}
+		if (img != null) {
+			g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
+		}
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
